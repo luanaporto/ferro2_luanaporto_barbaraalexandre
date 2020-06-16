@@ -1,10 +1,8 @@
-
 package albunsfx;
 
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
-
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -42,13 +40,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javax.imageio.ImageIO;
 
-/**
- *
- * @author Silvio
- */
 public class CadArtistaController implements Initializable {
-    
-   
     @FXML
     private Button btnovo;
     @FXML
@@ -87,7 +79,6 @@ public class CadArtistaController implements Initializable {
     private TableColumn<Artista, Integer> coltipo;
     @FXML
     private ImageView foto;
-    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -250,12 +241,7 @@ public class CadArtistaController implements Initializable {
                 new FileChooser.ExtensionFilter("JPG", "*.jpg"),
                 new FileChooser.ExtensionFilter("PNG", "*.png")
             );
-        
         File file = fileChooser.showOpenDialog(null);
-        
         foto.setImage(new Image(file.toURI().toString()));
-        
     }
-
-    
 }

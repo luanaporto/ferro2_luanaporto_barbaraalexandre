@@ -1,4 +1,5 @@
 package albunsfx;
+
 import albunsfx.db.entidade.Genero;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
@@ -32,7 +33,6 @@ import com.jfoenix.controls.JFXComboBox;
 import java.util.List;
 
 public class CadGeneroController implements Initializable {
-    
     @FXML
     private Button btnovo;
     @FXML
@@ -76,7 +76,6 @@ public class CadGeneroController implements Initializable {
     private void estadoOriginal() {
         pnpesquisa.setDisable(false);
         pndados.setDisable(true);
-
         btconfirmar.setDisable(true);
         btcancelar.setDisable(false);
         btapagar.setDisable(true);
@@ -93,7 +92,6 @@ public class CadGeneroController implements Initializable {
                 ((ComboBox) n).getItems().clear();
             }
         }
-
         carregaTabela("");
     }
    
@@ -125,7 +123,6 @@ public class CadGeneroController implements Initializable {
         Genero g = (Genero) tabela.getSelectionModel().getSelectedItem();
         txid.setText("" + g.getId());
         txnome.setText(g.getNome());
-        
         estadoEdicao();        
     }
 
@@ -164,9 +161,7 @@ public class CadGeneroController implements Initializable {
             a.setContentText("Problemas ao Alterar: "+Banco.getConexao().getMensagemErro());
              a.showAndWait();
         }
-       
         estadoOriginal();
-
     }
 
     @FXML
@@ -189,6 +184,4 @@ public class CadGeneroController implements Initializable {
             btapagar.setDisable(false);
         }
     }
-
-    
 }
