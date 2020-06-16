@@ -112,7 +112,7 @@ public class CadGeneroController implements Initializable {
         List<Genero> res = dal.get(filtro);
         ObservableList<Genero> modelo;
         modelo = FXCollections.observableArrayList(res);
-//        tabela.setItems(modelo);
+        tabela.setItems(modelo);
     }
 
     @FXML
