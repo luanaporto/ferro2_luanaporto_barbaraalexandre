@@ -22,6 +22,7 @@
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#clkCadArtista" text="Artista" />
                     <MenuItem mnemonicParsing="false" onAction="#clkCadGenero" text="Gênero" />
+                    <MenuItem mnemonicParsing="false" onAction="#clkCadTipoArtista" text="Tipo de Artista" />
                         <MenuItem mnemonicParsing="false" onAction="#clkFechar" text="Fechar" />
                   </items>
                 </Menu>
@@ -43,11 +44,18 @@
                 <Button mnemonicParsing="false" onAction="#clkCadArtista" prefHeight="48.0" prefWidth="64.0" style="-fx-background-color: #47313B;" text="Artistas" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
-                     </font></Button>
+                     </font>
+                </Button>
                 <Button mnemonicParsing="false" onAction="#clkCadGenero" prefHeight="48.0" prefWidth="64.0" style="-fx-background-color: #47313B;" text="Gêneros" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
-                     </font></Button>
+                     </font>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#clkCadTipoArtista" prefHeight="48.0" prefWidth="64.0" style="-fx-background-color: #47313B;" text="Tipos de Artista" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                </Button>
               </items>
             </ToolBar>
          </children>

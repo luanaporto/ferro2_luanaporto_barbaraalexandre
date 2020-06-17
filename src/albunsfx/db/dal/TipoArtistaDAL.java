@@ -16,13 +16,13 @@ public class TipoArtistaDAL
     }
     public boolean alterar(TipoArtista ta)
     {
-        String sql="update musica set ta_nome='#1' where ta_id="+ta.getId();
+        String sql="update tipoartista set ta_nome='#1' where ta_id="+ta.getId();
         sql=sql.replace("#1", ta.getNome());
         return Banco.getConexao().manipular(sql);
     }
-    public boolean apagar(TipoArtista m)
+    public boolean apagar(TipoArtista ta)
     {
-        return Banco.getConexao().manipular("delete from musica where mus_id="+m.getId());
+        return Banco.getConexao().manipular("delete from tipoartista where ta_id="+ta.getId());
     }
     public TipoArtista get(int id)
     {   TipoArtista ta=null;
