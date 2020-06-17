@@ -6,30 +6,30 @@ public class Album {
     private int ano;
     private String descricao;
     private int rating;
-    private int id_genero;
-    private int id_artista;
+    private Genero genero;
+    private Artista artista;
 
     public Album() {
     }
 
-    public Album(int id, String titulo, int ano, String descricao, int rating, int id_genero, int id_artista) {
+    public Album(int id, String titulo, int ano, String descricao, int rating, Genero genero, Artista artista) {
         this.id = id;
         this.titulo = titulo;
         this.ano = ano;
         this.descricao = descricao;
         this.rating = rating;
-        this.id_genero = id_genero;
-        this.id_artista = id_artista;
+        this.genero = genero;
+        this.artista = artista;
     }
 
-    public Album(String titulo, int ano, String descricao, int rating, int id_genero, int id_artista) {
+    public Album(String titulo, int ano, String descricao, int rating, Genero genero, Artista artista) {
         this.id = 0;
         this.titulo = titulo;
         this.ano = ano;
         this.descricao = descricao;
         this.rating = rating;
-        this.id_genero = id_genero;
-        this.id_artista = id_artista;
+        this.genero = genero;
+        this.artista = artista;
     }
     
     
@@ -73,20 +73,20 @@ public class Album {
         this.rating = rating;
     }
 
-    public int getId_genero() {
-        return id_genero;
+    public Genero getGenero() {
+        return genero;
     }
 
-    public void setId_genero(int id_genero) {
-        this.id_genero = id_genero;
+    public void setGenero(Genero genero) {
+        this.genero = genero;
     }
 
-    public int getId_artista() {
-        return id_artista;
+    public Artista getArtista() {
+        return artista;
     }
 
-    public void setId_artista(int id_artista) {
-        this.id_artista = id_artista;
+    public void setArtista(Artista artista) {
+        this.artista = artista;
     }
     
 }
