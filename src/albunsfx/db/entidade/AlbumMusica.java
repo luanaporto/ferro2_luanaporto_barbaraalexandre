@@ -1,31 +1,31 @@
 package albunsfx.db.entidade;
 
 public class AlbumMusica {
-    private int id_album;
-    private int id_musica;
+    private Album album;
+    private Musica musica;
 
     public AlbumMusica() {
     }
 
-    public AlbumMusica(int id_album, int id_musica) {
-        this.id_album = id_album;
-        this.id_musica = id_musica;
+    public AlbumMusica(Album album, Musica musica) {
+        this.album = album;
+        this.musica = musica;
     }
 
-    public int getId_album() {
-        return id_album;
+    public Album getAlbum() {
+        return album;
     }
 
-    public void setId_album(int id_album) {
-        this.id_album = id_album;
+    public void setAlbum(Album album) {
+        this.album = album;
     }
 
-    public int getId_musica() {
-        return id_musica;
+    public Musica getMusica() {
+        return musica;
     }
 
-    public void setId_musica(int id_musica) {
-        this.id_musica = id_musica;
+    public void setMusica(Musica musica) {
+        this.musica = musica;
     }
     
 }
