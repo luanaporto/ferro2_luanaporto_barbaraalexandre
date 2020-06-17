@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffddd2;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="albunsfx.TelaPrincipalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFDFCE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="albunsfx.TelaPrincipalController">
    <top>
       <VBox prefHeight="58.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -38,19 +38,25 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <ToolBar maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #0b132b;">
+            <ToolBar maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #C4525A;">
               <items>
-                <Button mnemonicParsing="false" onAction="#clkCadArtista" prefHeight="48.0" prefWidth="64.0" style="-fx-background-color: #6fffe9;" text="Artistas" />
-                <Button mnemonicParsing="false" onAction="#clkCadGenero" prefHeight="48.0" prefWidth="64.0" style="-fx-background-color: #6fffe9;" text="Gêneros" />
+                <Button mnemonicParsing="false" onAction="#clkCadArtista" prefHeight="48.0" prefWidth="64.0" style="-fx-background-color: #47313B;" text="Artistas" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                <Button mnemonicParsing="false" onAction="#clkCadGenero" prefHeight="48.0" prefWidth="64.0" style="-fx-background-color: #47313B;" text="Gêneros" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
               </items>
             </ToolBar>
          </children>
       </VBox>
    </top>
    <bottom>
-      <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #3a506b;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #C6A898;" BorderPane.alignment="CENTER">
          <children>
-            <Label text="FIPPTools@2020" textFill="#c3c145">
+            <Label text="FIPPTools@2020" textFill="#5b5a23">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
