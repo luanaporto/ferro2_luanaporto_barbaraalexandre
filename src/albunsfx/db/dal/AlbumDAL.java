@@ -38,29 +38,31 @@ public class AlbumDAL {
     {
         return Banco.getConexao().manipular("delete from album where al_id="+a.getId());
     }
-    public Artista get(int id)
-    {   Artista a=null;
-        String sql="select * from artista where art_id="+id;
+    public Album get(int id)
+    {   Album a=null;
+        String sql="select * from album where al_id="+id;
         ResultSet rs=Banco.getConexao().consultar(sql);
-        TipoArtistaDAL tadal=new TipoArtistaDAL();
+        GeneroDAL gendal=new GeneroDAL();
+        ArtistaDAL aldal=new ArtistaDAL();
         try{
         if(rs.next())
-            a=new Artista(rs.getInt("art_id"),rs.getString("art_nome"),rs.getString("art_origem"),
-                    rs.getDate("art_dtnasc").toLocalDate(),tadal.get(rs.getInt("ta_id")));
+            a=new Album(rs.getInt("al_id"),rs.getString("al_titulo"),rs.getInt("al_ano"),rs.getString("al_descricao"), rs.getInt("al_rating"),
+                    gendal.get(rs.getInt("gen_id")),aldal.get(rs.getInt("ta_id")));
         }catch(Exception e){};
         return a;
     }
     public List get(String filtro)
-    {   String sql="select * from artista";
+    {   String sql="select * from album";
         if (!filtro.isEmpty())
             sql+=" where "+filtro;
-        List<Artista> list = new ArrayList();
-        TipoArtistaDAL tadal=new TipoArtistaDAL();
+        List<Album> list = new ArrayList();
+        GeneroDAL gendal=new GeneroDAL();
+        ArtistaDAL aldal=new ArtistaDAL();
         ResultSet rs=Banco.getConexao().consultar(sql);
         try{
            while(rs.next())
-               list.add(new Artista(rs.getInt("art_id"),rs.getString("art_nome"),rs.getString("art_origem"),
-                    rs.getDate("art_dtnasc").toLocalDate(),tadal.get(rs.getInt("ta_id"))));
+               list.add(new Album(rs.getInt("al_id"),rs.getString("al_titulo"),rs.getInt("al_ano"),rs.getString("al_descricao"), rs.getInt("al_rating"),
+                    gendal.get(rs.getInt("gen_id")),aldal.get(rs.getInt("ta_id"))));
         }catch(Exception e){};
         return list;
     }
