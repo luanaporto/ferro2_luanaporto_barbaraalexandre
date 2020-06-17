@@ -6,7 +6,6 @@ import java.util.List;
 import albunsfx.db.entidade.TipoArtista;
 import albunsfx.db.util.Banco;
 
-
 public class TipoArtistaDAL 
 {
     public boolean salvar(TipoArtista ta)
