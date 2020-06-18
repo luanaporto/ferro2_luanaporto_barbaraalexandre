@@ -36,7 +36,7 @@
                         <Image url="@../images/album.png" />
                      </image>
                   </ImageView>
-                  <JFXTextField fx:id="txratting" labelFloat="true" layoutX="359.0" layoutY="65.0" prefHeight="25.0" prefWidth="311.0" promptText="Ratting" />
+                  <JFXTextField fx:id="txrating" labelFloat="true" layoutX="359.0" layoutY="65.0" prefHeight="25.0" prefWidth="311.0" promptText="Rating" />
                   <JFXComboBox fx:id="cbartista" labelFloat="true" layoutX="358.0" layoutY="107.0" prefHeight="25.0" prefWidth="313.0" promptText="Artista" />
                   <JFXComboBox fx:id="cbgenero" labelFloat="true" layoutX="27.0" layoutY="107.0" prefHeight="25.0" prefWidth="314.0" promptText="Gênero" />
                   <JFXTextField fx:id="txano" labelFloat="true" layoutX="27.0" layoutY="65.0" prefHeight="25.0" prefWidth="321.0" promptText="Ano" />
