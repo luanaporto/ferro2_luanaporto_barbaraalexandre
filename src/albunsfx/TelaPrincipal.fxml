@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="517.0" style="-fx-background-color: #FFDFCE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="albunsfx.TelaPrincipalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="563.0" style="-fx-background-color: #FFDFCE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="albunsfx.TelaPrincipalController">
    <top>
       <VBox prefHeight="121.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -27,6 +27,14 @@
                     <MenuItem mnemonicParsing="false" onAction="#clkFechar" text="Fechar" />
                   </items>
                 </Menu>
+                  <Menu mnemonicParsing="false" text="Álbum">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Novo Álbum Original" />
+                        <MenuItem mnemonicParsing="false" text="Novo Álbum Personalizado" />
+                        <MenuItem mnemonicParsing="false" onAction="#clkPesqAlbum" text="Abrir Álbum Original" />
+                        <MenuItem mnemonicParsing="false" onAction="#clkPesqAlbum" text="Abrir Álbum Personalizado" />
+                    </items>
+                  </Menu>
                 <Menu mnemonicParsing="false" text="Operações">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Monte seu album" />
@@ -43,29 +51,29 @@
                   <Insets />
                </VBox.margin>
             </MenuBar>
-            <HBox alignment="CENTER" minHeight="80.0" prefHeight="96.0" prefWidth="845.0" spacing="10.0" style="-fx-background-color: #400100;">
+            <HBox alignment="CENTER" minHeight="80.0" prefHeight="96.0" prefWidth="845.0" spacing="15.0" style="-fx-background-color: #400100;">
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clkCadArtista" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #73311D;" text="Artistas" textAlignment="CENTER" textFill="WHITE">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clkCadArtista" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #7D253B;" text="Artistas" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#clkCadGenero" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #73311D #73311D;" text="Gêneros" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button mnemonicParsing="false" onAction="#clkCadGenero" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #7D253B;" text="Gêneros" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#clkCadMusicas" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #73311D;" text="Músicas" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button mnemonicParsing="false" onAction="#clkCadMusicas" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #7D253B;" text="Músicas" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#clkCadTipoArtista" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #73311D;" text="Tipos de Artista" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button mnemonicParsing="false" onAction="#clkCadTipoArtista" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #7D253B;" text="Tipos de Artista" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#clkCadAlbum" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #73311D;" text="Álbum" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button mnemonicParsing="false" onAction="#clkCadAlbum" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #7D253B;" text="Álbum" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -82,7 +90,7 @@
       </VBox>
    </top>
    <bottom>
-      <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #C6A898;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="523.0" style="-fx-background-color: #C6A898;" BorderPane.alignment="CENTER">
          <children>
             <Label text="FIPPTools@2020" textFill="#5b5a23">
                <font>
