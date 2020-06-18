@@ -47,7 +47,7 @@
       </VBox>
    </top>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tabela" onMouseClicked="#clkTabela" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="colalbum" prefWidth="290.0" text="Álbum" />
           <TableColumn fx:id="colmusica" minWidth="0.0" prefWidth="298.0" text="Música" />

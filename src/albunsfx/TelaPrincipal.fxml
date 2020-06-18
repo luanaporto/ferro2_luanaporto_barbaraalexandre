@@ -22,16 +22,16 @@
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#clkCadArtista" text="Artista" />
                     <MenuItem mnemonicParsing="false" onAction="#clkCadGenero" text="Gênero" />
-                        <MenuItem mnemonicParsing="false" onAction="#clkCadMusicas" text="Músicas" />
+                    <MenuItem mnemonicParsing="false" onAction="#clkCadMusicas" text="Músicas" />
                     <MenuItem mnemonicParsing="false" onAction="#clkCadTipoArtista" text="Tipo de Artista" />
-                        <MenuItem mnemonicParsing="false" onAction="#clkCadAlbum" text="Álbum" />
-                        <MenuItem mnemonicParsing="false" onAction="#clkFechar" text="Fechar" />
+                    <MenuItem mnemonicParsing="false" onAction="#clkCadAlbum" text="Álbum" />
+                    <MenuItem mnemonicParsing="false" onAction="#clkFechar" text="Fechar" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Operações">
                   <items>
                     <MenuItem mnemonicParsing="false" text="Monte seu album" />
-                        <MenuItem mnemonicParsing="false" text="Play Musics" />
+                    <MenuItem mnemonicParsing="false" text="Play Musics" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Ajuda">

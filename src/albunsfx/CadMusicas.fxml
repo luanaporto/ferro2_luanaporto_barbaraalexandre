@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -37,8 +37,8 @@
                      </image>
                   </ImageView>
                   <JFXTextField fx:id="txduracao" layoutX="443.0" layoutY="65.0" prefHeight="25.0" prefWidth="228.0" promptText="Duração" />
-                  <JFXComboBox fx:id="cbartista" labelFloat="true" layoutX="26.0" layoutY="108.0" prefHeight="25.0" prefWidth="398.0" promptText="Artista-Id" />
-                  <JFXComboBox fx:id="cbgenero" labelFloat="true" layoutX="443.0" layoutY="108.0" prefHeight="25.0" prefWidth="227.0" promptText="Gênero-Id" />
+                  <JFXComboBox fx:id="cbartista" labelFloat="true" layoutX="26.0" layoutY="108.0" prefHeight="25.0" prefWidth="398.0" promptText="Artista" />
+                  <JFXComboBox fx:id="cbgenero" labelFloat="true" layoutX="443.0" layoutY="108.0" prefHeight="25.0" prefWidth="227.0" promptText="Gênero" />
                </children>
             </AnchorPane>
             <HBox fx:id="pnpesquisa" alignment="CENTER" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="901.0" spacing="10.0" style="-fx-background-color: #DDDDDD;">

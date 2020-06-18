@@ -155,7 +155,7 @@ public class CadArtistaController implements Initializable {
         cbtipo.getSelectionModel().select(0);
         cbtipo.getSelectionModel().select(a.getTipoartista());
         foto.setImage(new Image(new ArtistaDAL().getFoto(a.getId())));
-        estadoEdicao();        
+        estadoEdicao();       
     }
 
     @FXML

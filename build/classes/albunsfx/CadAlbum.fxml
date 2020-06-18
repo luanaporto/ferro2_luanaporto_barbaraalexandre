@@ -53,7 +53,7 @@
       </VBox>
    </top>
    <center>
-      <TableView prefHeight="173.0" prefWidth="856.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tabela" onMouseClicked="#clkTabela" prefHeight="173.0" prefWidth="856.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
