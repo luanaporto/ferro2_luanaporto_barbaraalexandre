@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <top>
+      <VBox prefHeight="230.0" prefWidth="590.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="690.0" spacing="20.0" style="-fx-background-color: #DDDDDD;">
+               <children>
+                  <Button fx:id="btnovo1" mnemonicParsing="false" onAction="#clkBtNovo" prefWidth="80.0" text="Novo" />
+                  <Button fx:id="btalterar1" layoutX="318.0" layoutY="23.0" mnemonicParsing="false" onAction="#clkBtAlterar" prefWidth="80.0" text="Alterar" />
+                  <Button fx:id="btapagar1" layoutX="358.0" layoutY="23.0" mnemonicParsing="false" onAction="#clkBtApagar" prefWidth="80.0" text="Apagar" />
+                  <Button fx:id="btconfirmar1" layoutX="398.0" layoutY="23.0" mnemonicParsing="false" onAction="#clkBtConfirmar" prefWidth="80.0" text="Confirmar" />
+                  <Button fx:id="btcancelar1" layoutX="438.0" layoutY="23.0" mnemonicParsing="false" onAction="#clkBtCancelar" prefWidth="80.0" text="Cancelar" />
+               </children>
+            </HBox>
+            <AnchorPane fx:id="pndados1" minHeight="125.0" prefHeight="125.0" prefWidth="590.0" style="-fx-background-color: white;">
+               <children>
+                  <JFXComboBox fx:id="cbalbum" labelFloat="true" layoutX="26.0" layoutY="14.0" prefHeight="25.0" prefWidth="455.0" promptText="Álbum" />
+                  <JFXComboBox fx:id="cbmusica" labelFloat="true" layoutX="26.0" layoutY="63.0" prefHeight="25.0" prefWidth="458.0" promptText="Música" />
+               </children>
+            </AnchorPane>
+            <HBox fx:id="pnpesquisa" alignment="CENTER" maxHeight="110.0" minHeight="40.0" prefHeight="42.0" prefWidth="605.0" spacing="10.0" style="-fx-background-color: #DDDDDD;">
+               <children>
+                  <JFXTextField fx:id="txbusca" prefHeight="25.0" prefWidth="454.0" promptText="Digite aqui uma chave de busca" />
+                  <Button fx:id="btbuscar" mnemonicParsing="false" onAction="#clkBtBuscar" style="-fx-background-color: white;" text="buscar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colalbum" prefWidth="290.0" text="Álbum" />
+          <TableColumn fx:id="colmusica" minWidth="0.0" prefWidth="298.0" text="Música" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
