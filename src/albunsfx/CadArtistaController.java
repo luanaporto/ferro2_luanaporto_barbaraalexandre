@@ -147,7 +147,7 @@ public class CadArtistaController implements Initializable {
 
     @FXML
     private void clkBtAlterar(ActionEvent event) {
-        Artista a = (Artista) tabela.getSelectionModel().getSelectedItem();
+        Artista a = tabela.getSelectionModel().getSelectedItem();
         txid.setText("" + a.getId());
         txnome.setText(a.getNome());
         txorigem.setText(a.getOrigem());

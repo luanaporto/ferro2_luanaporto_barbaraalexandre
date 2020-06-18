@@ -114,7 +114,7 @@ public class CadTipoArtistaController implements Initializable {
 
     @FXML
     private void clkBtAlterar(ActionEvent event) {
-        TipoArtista ta = (TipoArtista) tabela.getSelectionModel().getSelectedItem();
+        TipoArtista ta = tabela.getSelectionModel().getSelectedItem();
         txid.setText("" + ta.getId());
         txnome.setText(ta.getNome());
         estadoEdicao(); 
@@ -168,7 +168,7 @@ public class CadTipoArtistaController implements Initializable {
 
     @FXML
     private void clkBtBuscar(ActionEvent event) {
-        carregaTabela("upper(mus_titulo) like '%"+txbusca.getText().toUpperCase()+"%'");
+        carregaTabela("upper(ta_nome) like '%"+txbusca.getText().toUpperCase()+"%'");
     }
     
     @FXML

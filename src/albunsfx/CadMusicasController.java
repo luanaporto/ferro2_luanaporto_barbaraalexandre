@@ -1,9 +1,16 @@
 package albunsfx;
 
+import albunsfx.db.dal.ArtistaDAL;
+import albunsfx.db.dal.GeneroDAL;
+import albunsfx.db.dal.MusicaDAL;
+import albunsfx.db.entidade.Artista;
 import albunsfx.db.entidade.Genero;
-import com.jfoenix.controls.JFXDatePicker;
+import albunsfx.db.entidade.Musica;
+import albunsfx.db.util.Banco;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,24 +22,18 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import albunsfx.db.dal.ArtistaDAL;
-import albunsfx.db.dal.GeneroDAL;
-import albunsfx.db.dal.TipoArtistaDAL;
-import albunsfx.db.entidade.Artista;
-import albunsfx.db.entidade.TipoArtista;
-import albunsfx.db.util.Banco;
-import com.jfoenix.controls.JFXComboBox;
-import java.util.List;
 
-public class CadGeneroController implements Initializable {
+public class CadMusicasController implements Initializable {
+
     @FXML
     private Button btnovo;
     @FXML
@@ -46,7 +47,21 @@ public class CadGeneroController implements Initializable {
     @FXML
     private AnchorPane pndados;
     @FXML
+    private TableView<Musica> tabela;
+    @FXML
     private JFXTextField txid;
+    @FXML
+    private JFXTextField txtitulo;
+    @FXML
+    private JFXTextField txurl;
+    @FXML
+    private ImageView foto;
+    @FXML
+    private JFXTextField txduracao;
+    @FXML
+    private JFXComboBox<Artista> cbartista;
+    @FXML
+    private JFXComboBox<Genero> cbgenero;
     @FXML
     private HBox pnpesquisa;
     @FXML
@@ -54,28 +69,32 @@ public class CadGeneroController implements Initializable {
     @FXML
     private Button btbuscar;
     @FXML
-    private TableView<Genero> tabela;
+    private TableColumn<Musica, Integer> colid;
     @FXML
-    private JFXTextField txnome;
+    private TableColumn<Musica, String> coltitulo;
     @FXML
-    private TableColumn<Genero, Integer> colid;
+    private TableColumn<Musica, String> colartista;
     @FXML
-    private TableColumn<Genero, String> colnome;
-    
-    
+    private TableColumn<Musica, String> colgenero;
+    @FXML
+    private TableColumn<Musica, Double> colduracao;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // vincular as colunas da tabela aos beans
         colid.setCellValueFactory(new PropertyValueFactory("id"));
-        colnome.setCellValueFactory(new PropertyValueFactory("nome"));
+        coltitulo.setCellValueFactory(new PropertyValueFactory("titulo"));
+        colartista.setCellValueFactory(new PropertyValueFactory("artista"));
+        colgenero.setCellValueFactory(new PropertyValueFactory("genero"));
+        colduracao.setCellValueFactory(new PropertyValueFactory("duracao"));
         
-        // configurar os componentes, preparando para edição/busca/fechamento da janela         
         estadoOriginal();
     }
-
+    
     private void estadoOriginal() {
+        foto.setImage(new Image("images/music-note.png"));
         pnpesquisa.setDisable(false);
         pndados.setDisable(true);
+
         btconfirmar.setDisable(true);
         btcancelar.setDisable(false);
         btapagar.setDisable(true);
@@ -92,9 +111,11 @@ public class CadGeneroController implements Initializable {
                 ((ComboBox) n).getItems().clear();
             }
         }
+
         carregaTabela("");
+        carregarCombos();
     }
-   
+    
     private void estadoEdicao() {     // carregar os componentes da tela (listbox, combobox, ...)
         // p.e. : carregaEstados();
         pnpesquisa.setDisable(true);
@@ -103,14 +124,23 @@ public class CadGeneroController implements Initializable {
         btnovo.setDisable(true);
         btapagar.setDisable(true);
         btalterar.setDisable(true);
-        txnome.requestFocus(); //o cursor vai para o textfield de titulo
+        txtitulo.requestFocus(); //o cursor vai para o txtitulo de titulo
     }
+    
     private void carregaTabela(String filtro) {
-        GeneroDAL dal = new GeneroDAL();
-        List<Genero> res = dal.get(filtro);
-        ObservableList<Genero> modelo;
+        MusicaDAL dal = new MusicaDAL();
+        List<Musica> res = dal.get(filtro);
+        ObservableList<Musica> modelo;
         modelo = FXCollections.observableArrayList(res);
         tabela.setItems(modelo);
+    }
+    
+    private void carregarCombos() {
+        ArtistaDAL adal = new ArtistaDAL();
+        cbartista.setItems(FXCollections.observableArrayList(adal.get("")));
+        
+        GeneroDAL gdal = new GeneroDAL();
+        cbgenero.setItems(FXCollections.observableArrayList(gdal.get("")));
     }
 
     @FXML
@@ -120,10 +150,15 @@ public class CadGeneroController implements Initializable {
 
     @FXML
     private void clkBtAlterar(ActionEvent event) {
-        Genero g = tabela.getSelectionModel().getSelectedItem();
-        txid.setText("" + g.getId());
-        txnome.setText(g.getNome());
-        estadoEdicao();        
+        Musica m = tabela.getSelectionModel().getSelectedItem();
+        txid.setText("" + m.getId());
+        txtitulo.setText(m.getTitulo());
+        txurl.setText(m.getUrl());
+        txduracao.setText(""+m.getDuracao());
+        cbartista.getSelectionModel().select(m.getArtista());
+        cbgenero.getSelectionModel().select(m.getGenero());
+        foto.setImage(new Image("images/music-note.png"));
+        estadoEdicao(); 
     }
 
     @FXML
@@ -131,10 +166,10 @@ public class CadGeneroController implements Initializable {
         Alert a = new Alert(Alert.AlertType.CONFIRMATION);
         a.setContentText("Confirma a exclusão");
         if (a.showAndWait().get() == ButtonType.OK) {
-            GeneroDAL dal = new GeneroDAL();
-            Genero g;
-            g = tabela.getSelectionModel().getSelectedItem();
-            dal.apagar(g);
+            MusicaDAL dal = new MusicaDAL();
+            Musica m;
+            m = tabela.getSelectionModel().getSelectedItem();
+            dal.apagar(m);
             carregaTabela("");
         }
     }
@@ -142,25 +177,33 @@ public class CadGeneroController implements Initializable {
     @FXML
     private void clkBtConfirmar(ActionEvent event) {
         int cod;
+        double duracao;
         try {
             cod = Integer.parseInt(txid.getText());
         } catch (Exception e) {
             cod = 0;
         }
-        Genero g = new Genero(cod, txnome.getText());
-        GeneroDAL dal = new GeneroDAL();
+        try {
+            duracao = Double.parseDouble(txduracao.getText());
+        } catch (Exception e) {
+            duracao = 0;
+        }
+        Musica m = new Musica(cod, txtitulo.getText(), duracao, txurl.getText(), 
+                cbartista.getSelectionModel().getSelectedItem(),cbgenero.getSelectionModel().getSelectedItem());
+        MusicaDAL dal = new MusicaDAL();
         Alert a = new Alert(Alert.AlertType.INFORMATION);
-        if (g.getId() == 0) // novo cadastro
-        {
-            if (!dal.salvar(g)) {
+        if (m.getId() == 0) // novo cadastro
+        {   
+            if (!dal.salvar(m)) {
                 a.setContentText("Problemas ao Gravar: "+Banco.getConexao().getMensagemErro());
                  a.showAndWait();
             }
         } else //alteração de cadastro
-        if (dal.alterar(g)) {
+        if (!dal.alterar(m)) {
             a.setContentText("Problemas ao Alterar: "+Banco.getConexao().getMensagemErro());
              a.showAndWait();
         }
+       
         estadoOriginal();
     }
 
@@ -174,9 +217,9 @@ public class CadGeneroController implements Initializable {
 
     @FXML
     private void clkBtBuscar(ActionEvent event) {
-        carregaTabela("upper(gen_nome) like '%"+txbusca.getText().toUpperCase()+"%'");
+        carregaTabela("upper(mus_titulo) like '%"+txbusca.getText().toUpperCase()+"%'");
     }
-
+    
     @FXML
     private void clkTabela(MouseEvent event) {
         if (tabela.getSelectionModel().getSelectedIndex() >= 0) {
@@ -184,4 +227,5 @@ public class CadGeneroController implements Initializable {
             btapagar.setDisable(false);
         }
     }
+    
 }

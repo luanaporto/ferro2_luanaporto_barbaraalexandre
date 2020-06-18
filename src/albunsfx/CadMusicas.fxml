@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -31,7 +31,7 @@
                   <JFXTextField fx:id="txid" editable="false" layoutX="26.0" layoutY="25.0" text="Id" />
                   <JFXTextField fx:id="txtitulo" labelFloat="true" layoutX="26.0" layoutY="65.0" prefHeight="25.0" prefWidth="397.0" promptText="Título" />
                   <JFXTextField fx:id="txurl" labelFloat="true" layoutX="25.0" layoutY="150.0" prefHeight="25.0" prefWidth="670.0" promptText="Url" />
-                  <ImageView fx:id="foto" fitHeight="150.0" fitWidth="150.0" layoutX="707.0" layoutY="25.0" onMousePressed="#clkFoto" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="foto" fitHeight="150.0" fitWidth="150.0" layoutX="707.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/music-note.png" />
                      </image>
@@ -51,7 +51,7 @@
       </VBox>
    </top>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tabela" onMouseClicked="#clkTabela" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="colid" prefWidth="60.0" text="Id" />
           <TableColumn fx:id="coltitulo" prefWidth="310.0" text="Título" />
