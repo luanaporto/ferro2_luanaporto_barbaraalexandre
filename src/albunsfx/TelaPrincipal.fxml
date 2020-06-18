@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFDFCE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="albunsfx.TelaPrincipalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="517.0" style="-fx-background-color: #FFDFCE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="albunsfx.TelaPrincipalController">
    <top>
       <VBox prefHeight="121.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -24,6 +24,7 @@
                     <MenuItem mnemonicParsing="false" onAction="#clkCadGenero" text="Gênero" />
                         <MenuItem mnemonicParsing="false" onAction="#clkCadMusica" text="Músicas" />
                     <MenuItem mnemonicParsing="false" onAction="#clkCadTipoArtista" text="Tipo de Artista" />
+                        <MenuItem mnemonicParsing="false" onAction="#clkCadAlbum" text="Álbum" />
                         <MenuItem mnemonicParsing="false" onAction="#clkFechar" text="Fechar" />
                   </items>
                 </Menu>
@@ -39,25 +40,33 @@
                   </items>
                 </Menu>
               </menus>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </MenuBar>
             <ToolBar maxHeight="328.0" minHeight="80.0" prefHeight="96.0" prefWidth="485.0" style="-fx-background-color: #C4525A;">
               <items>
-                <Button mnemonicParsing="false" onAction="#clkCadArtista" prefHeight="57.0" prefWidth="64.0" style="-fx-background-color: #47313B;" text="Artistas" textAlignment="CENTER" textFill="WHITE">
+                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clkCadArtista" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #47313B;" text="Artistas" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#clkCadGenero" prefHeight="56.0" prefWidth="64.0" style="-fx-background-color: #47313B;" text="Gêneros" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                <Button mnemonicParsing="false" onAction="#clkCadGenero" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #47313B;" text="Gêneros" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                 </Button>
-                  <Button mnemonicParsing="false" onAction="#clkCadTipoArtista" prefHeight="56.0" prefWidth="64.0" style="-fx-background-color: #47313B;" text="Músicas" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button mnemonicParsing="false" onAction="#clkCadMusicas" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #47313B;" text="Músicas" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#clkCadTipoArtista" prefHeight="56.0" prefWidth="64.0" style="-fx-background-color: #47313B;" text="Tipos de Artista" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button mnemonicParsing="false" onAction="#clkCadTipoArtista" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #47313B;" text="Tipos de Artista" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clkCadAlbum" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #47313B;" text="Álbum" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -66,8 +75,17 @@
                <padding>
                   <Insets left="10.0" />
                </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </ToolBar>
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </VBox>
    </top>
    <bottom>

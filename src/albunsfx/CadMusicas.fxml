@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -33,12 +33,12 @@
                   <JFXTextField fx:id="txurl" labelFloat="true" layoutX="25.0" layoutY="150.0" prefHeight="25.0" prefWidth="670.0" promptText="Url" />
                   <ImageView fx:id="foto" fitHeight="150.0" fitWidth="150.0" layoutX="707.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/music-note.png" />
+                        <Image url="@../images/musica.png" />
                      </image>
                   </ImageView>
-                  <JFXTextField fx:id="txduracao" layoutX="443.0" layoutY="65.0" prefHeight="25.0" prefWidth="249.0" promptText="Duração" />
+                  <JFXTextField fx:id="txduracao" layoutX="443.0" layoutY="65.0" prefHeight="25.0" prefWidth="228.0" promptText="Duração" />
                   <JFXComboBox fx:id="cbartista" labelFloat="true" layoutX="26.0" layoutY="108.0" prefHeight="25.0" prefWidth="398.0" promptText="Artista-Id" />
-                  <JFXComboBox fx:id="cbgenero" labelFloat="true" layoutX="443.0" layoutY="108.0" prefHeight="25.0" prefWidth="250.0" promptText="Gênero-Id" />
+                  <JFXComboBox fx:id="cbgenero" labelFloat="true" layoutX="443.0" layoutY="108.0" prefHeight="25.0" prefWidth="227.0" promptText="Gênero-Id" />
                </children>
             </AnchorPane>
             <HBox fx:id="pnpesquisa" alignment="CENTER" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="901.0" spacing="10.0" style="-fx-background-color: #DDDDDD;">
