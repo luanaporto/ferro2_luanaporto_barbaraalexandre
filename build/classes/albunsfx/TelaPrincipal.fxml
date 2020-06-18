@@ -24,7 +24,7 @@
                     <MenuItem mnemonicParsing="false" onAction="#clkCadGenero" text="Gênero" />
                     <MenuItem mnemonicParsing="false" onAction="#clkCadMusicas" text="Músicas" />
                     <MenuItem mnemonicParsing="false" onAction="#clkCadTipoArtista" text="Tipo de Artista" />
-                    <!--<MenuItem mnemonicParsing="false" onAction="#clkCadAlbum" text="Álbum" />-->
+                    <MenuItem mnemonicParsing="false" onAction="#clkCadAlbum" text="Álbum" />
                     <MenuItem mnemonicParsing="false" onAction="#clkFechar" text="Fechar" />
                   </items>
                 </Menu>
@@ -66,11 +66,11 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <!--<Button mnemonicParsing="false" onAction="#clkCadAlbum" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #47313B;" text="Álbum" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                  <Button mnemonicParsing="false" onAction="#clkCadAlbum" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #47313B;" text="Álbum" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
-                  </Button>-->
+                  </Button>
               </items>
                <padding>
                   <Insets left="10.0" />
