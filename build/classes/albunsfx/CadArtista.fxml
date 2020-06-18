@@ -38,7 +38,7 @@
                   <JFXComboBox fx:id="cbtipo" labelFloat="true" layoutX="444.0" layoutY="65.0" prefHeight="25.0" prefWidth="209.0" promptText="Tipo" />
                   <ImageView fx:id="foto" fitHeight="150.0" fitWidth="150.0" layoutX="707.0" layoutY="25.0" onMousePressed="#clkFoto" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/singer.png" />
+                        <Image url="@../images/cantor.png" />
                      </image>
                   </ImageView>
                </children>

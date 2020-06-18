@@ -22,7 +22,7 @@
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#clkCadArtista" text="Artista" />
                     <MenuItem mnemonicParsing="false" onAction="#clkCadGenero" text="Gênero" />
-                        <MenuItem mnemonicParsing="false" onAction="#clkCadMusica" text="Músicas" />
+                        <MenuItem mnemonicParsing="false" onAction="#clkCadMusicas" text="Músicas" />
                     <MenuItem mnemonicParsing="false" onAction="#clkCadTipoArtista" text="Tipo de Artista" />
                         <MenuItem mnemonicParsing="false" onAction="#clkCadAlbum" text="Álbum" />
                         <MenuItem mnemonicParsing="false" onAction="#clkFechar" text="Fechar" />
