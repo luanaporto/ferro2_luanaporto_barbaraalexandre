@@ -47,12 +47,13 @@ public class AlbumDAL {
         try{
         if(rs.next())
             a=new Album(rs.getInt("al_id"),rs.getString("al_titulo"),rs.getInt("al_ano"),rs.getString("al_descricao"), rs.getInt("al_rating"),
-                    gendal.get(rs.getInt("gen_id")),aldal.get(rs.getInt("ta_id")));
+                    gendal.get(rs.getInt("gen_id")),aldal.get(rs.getInt("art_id")));
         }catch(Exception e){};
         return a;
     }
     public List get(String filtro)
-    {   String sql="select * from album";
+    {   String sql="select al.* from album al"
+            + " inner join artista art on art.art_id=al.art_id";
         if (!filtro.isEmpty())
             sql+=" where "+filtro;
         List<Album> list = new ArrayList();
@@ -62,7 +63,7 @@ public class AlbumDAL {
         try{
            while(rs.next())
                list.add(new Album(rs.getInt("al_id"),rs.getString("al_titulo"),rs.getInt("al_ano"),rs.getString("al_descricao"), rs.getInt("al_rating"),
-                    gendal.get(rs.getInt("gen_id")),aldal.get(rs.getInt("ta_id"))));
+                    gendal.get(rs.getInt("gen_id")),aldal.get(rs.getInt("art_id"))));
         }catch(Exception e){};
         return list;
     }

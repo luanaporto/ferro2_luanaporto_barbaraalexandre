@@ -89,4 +89,30 @@ public class TelaPrincipalController implements Initializable {
         
         stage.showAndWait();
     }
+    
+    @FXML
+    private void clkPesqAlbum(ActionEvent event) throws IOException {
+         //executar a janela de cadastro
+        Stage stage = new Stage();
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("PesqAlbum.fxml")));
+        stage.setScene(scene);
+        stage.setTitle("Pesquisa Album");
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        
+        stage.showAndWait();
+    }
+    
+    @FXML
+    private void clkCadAlbumMusica(ActionEvent event) throws IOException {
+         //executar a janela de cadastro
+        Stage stage = new Stage();
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("CadAlbumMusica.fxml")));
+        stage.setScene(scene);
+        stage.setTitle("Album Música");
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        
+        stage.showAndWait();
+    }
 }
