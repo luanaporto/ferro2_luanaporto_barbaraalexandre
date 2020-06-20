@@ -25,7 +25,7 @@ public class AlbumDAL {
     }
     public boolean alterar(Album a, InputStream is)
     {
-        String sql="update album set al_titulo='#1',al_ano=#2,al_descricao='#3',al_rating=#4,gen_id=#5,art_id=#6,art_foto=? where al_id="+a.getId();
+        String sql="update album set al_titulo='#1',al_ano=#2,al_descricao='#3',al_rating=#4,gen_id=#5,art_id=#6,al_foto=? where al_id="+a.getId();
         sql=sql.replace("#1", a.getTitulo());
         sql=sql.replace("#2", ""+a.getAno());
         sql=sql.replace("#3", a.getDescricao());

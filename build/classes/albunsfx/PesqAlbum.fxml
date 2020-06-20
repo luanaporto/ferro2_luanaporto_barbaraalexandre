@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="866.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="866.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="albunsfx.PesqAlbumController">
    <top>
       <VBox prefHeight="44.0" prefWidth="866.0" BorderPane.alignment="CENTER">
          <children>
@@ -28,24 +27,24 @@
       </VBox>
    </top>
    <bottom>
-      <VBox prefHeight="44.0" prefWidth="866.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="pndados" prefHeight="44.0" prefWidth="866.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="208.0" prefWidth="866.0" spacing="20.0" style="-fx-background-color: #DDDDDD;">
                <children>
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefWidth="90.0" text="Confirmar" />
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefWidth="90.0" text="Cancelar" />
+                  <Button fx:id="btconfirmar" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clkCadAlbumMusica" prefWidth="90.0" text="Confirmar" />
+                  <Button fx:id="btcancelar" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clkBtCancelar" prefWidth="90.0" text="Cancelar" />
                </children>
             </HBox>
          </children>
       </VBox>
    </bottom>
    <center>
-      <TableView prefHeight="425.0" prefWidth="866.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tabela" onMouseClicked="#clkTabela" prefHeight="425.0" prefWidth="866.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="67.0" text="Id" />
-          <TableColumn prefWidth="516.0" text="Título" />
-            <TableColumn prefWidth="180.0" text="Artista" />
-            <TableColumn prefWidth="102.0" text="Rating" />
+          <TableColumn fx:id="colid" prefWidth="67.0" text="Id" />
+          <TableColumn fx:id="coltitulo" prefWidth="516.0" text="Título" />
+            <TableColumn fx:id="colartista" prefWidth="180.0" text="Artista" />
+            <TableColumn fx:id="colrating" prefWidth="102.0" text="Rating" />
         </columns>
       </TableView>
    </center>

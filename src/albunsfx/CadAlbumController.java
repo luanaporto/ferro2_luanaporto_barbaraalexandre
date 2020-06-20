@@ -97,7 +97,7 @@ public class CadAlbumController implements Initializable {
     }
     
     private void estadoOriginal() {
-        foto.setImage(new Image("images/singer.png"));
+        foto.setImage(new Image("images/album.png"));
         pnpesquisa.setDisable(false);
         pndados.setDisable(true);
 
@@ -162,9 +162,11 @@ public class CadAlbumController implements Initializable {
         txano.setText("" + a.getAno());
         txdescricao.setText(a.getDescricao());
         txrating.setText("" + a.getRating());
+        cbgenero.getSelectionModel().select(0);
         cbgenero.getSelectionModel().select(a.getGenero());
+        cbartista.getSelectionModel().select(0);
         cbartista.getSelectionModel().select(a.getArtista());
-        foto.setImage(new Image(new ArtistaDAL().getFoto(a.getId())));
+        foto.setImage(new Image(new AlbumDAL().getFoto(a.getId())));
         estadoEdicao();
     }
 
@@ -241,19 +243,6 @@ public class CadAlbumController implements Initializable {
     }
 
     @FXML
-    private void clkFoto(MouseEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Escolha uma foto");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("All Images", "*.*"),
-                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
-                new FileChooser.ExtensionFilter("PNG", "*.png")
-            );
-        File file = fileChooser.showOpenDialog(null);
-        foto.setImage(new Image(file.toURI().toString()));
-    }
-
-    @FXML
     private void clkBtBuscar(ActionEvent event) {
         carregaTabela("upper(al_titulo) like '%"+txbusca.getText().toUpperCase()+"%'");
     }
@@ -264,6 +253,19 @@ public class CadAlbumController implements Initializable {
             btalterar.setDisable(false);
             btapagar.setDisable(false);
         }
+    }
+
+    @FXML
+    private void clkFoto(MouseEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Escolha uma foto");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("All Images", "*.*"),
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+                new FileChooser.ExtensionFilter("PNG", "*.png")
+            );
+        File file = fileChooser.showOpenDialog(null);
+        foto.setImage(new Image(file.toURI().toString()));
     }
     
 }

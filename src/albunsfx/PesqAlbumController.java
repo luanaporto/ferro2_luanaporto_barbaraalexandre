@@ -65,7 +65,7 @@ public class PesqAlbumController implements Initializable {
         pndados.setDisable(true);
         pnpesquisa.setDisable(false);
         btconfirmar.setDisable(true);
-        btcancelar.setDisable(false);
+        btcancelar.setDisable(true);
         btbuscar.setDisable(false);
         txbusca.requestFocus();
         
@@ -116,7 +116,7 @@ public class PesqAlbumController implements Initializable {
     @FXML
     private void clkTabela(MouseEvent event) {
         if (tabela.getSelectionModel().getSelectedIndex() >= 0) {
-            btconfirmar.setDisable(false);
+            btconfirmar.setDisable(true);
         }
     }
     
