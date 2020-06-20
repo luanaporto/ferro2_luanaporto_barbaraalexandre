@@ -22,7 +22,6 @@ import javafx.scene.control.TextInputControl;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -38,8 +37,6 @@ public class PesqAlbumController implements Initializable {
     private Button btconfirmar;
     @FXML
     private Button btcancelar;
-    @FXML
-    private VBox pndados;
     @FXML
     private TableView<Album> tabela;
     @FXML
@@ -62,20 +59,11 @@ public class PesqAlbumController implements Initializable {
     }
     
     private void estadoOriginal() {
-        pndados.setDisable(true);
         pnpesquisa.setDisable(false);
         btconfirmar.setDisable(true);
-        btcancelar.setDisable(true);
-        btbuscar.setDisable(false);
+        btcancelar.setDisable(false);
+        btbuscar.setDisable(true);
         txbusca.requestFocus();
-        
-        ObservableList<Node> componentes = pndados.getChildren(); //”limpa” os componentes
-        for (Node n : componentes) {
-            if (n instanceof TextInputControl) // textfield, textarea e htmleditor
-            {
-                ((TextInputControl) n).setText("");
-            }
-        }
 
         carregaTabela("");
     }
@@ -107,16 +95,13 @@ public class PesqAlbumController implements Initializable {
 
     @FXML
     private void clkBtCancelar(ActionEvent event) {
-        if(!pndados.isDisabled())  // encontra em estado de edição
-            estadoOriginal();
-        else
-            pndados.getScene().getWindow().hide();
+        pnpesquisa.getScene().getWindow().hide();
     }
 
     @FXML
     private void clkTabela(MouseEvent event) {
         if (tabela.getSelectionModel().getSelectedIndex() >= 0) {
-            btconfirmar.setDisable(true);
+            btconfirmar.setDisable(false);
         }
     }
     

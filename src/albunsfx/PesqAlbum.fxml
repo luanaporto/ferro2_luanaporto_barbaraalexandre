@@ -27,7 +27,7 @@
       </VBox>
    </top>
    <bottom>
-      <VBox fx:id="pndados" prefHeight="44.0" prefWidth="866.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="44.0" prefWidth="866.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="208.0" prefWidth="866.0" spacing="20.0" style="-fx-background-color: #DDDDDD;">
                <children>
