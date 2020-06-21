@@ -151,7 +151,7 @@ public class CadTipoArtistaController implements Initializable {
                  a.showAndWait();
             }
         } else //alteração de cadastro
-        if (dal.alterar(ta)) {
+        if (!dal.alterar(ta)) {
             a.setContentText("Problemas ao Alterar: "+Banco.getConexao().getMensagemErro());
              a.showAndWait();
         }

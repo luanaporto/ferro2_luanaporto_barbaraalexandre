@@ -47,6 +47,12 @@ public class PesqAlbumController implements Initializable {
     private TableColumn<Album, String> colartista;
     @FXML
     private TableColumn<Album, Integer> colrating;
+    
+    private static Album album = null;
+
+    public static Album getAlbum() {
+        return album;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -83,8 +89,11 @@ public class PesqAlbumController implements Initializable {
 
     @FXML
     private void clkCadAlbumMusica(ActionEvent event) throws IOException {
+        album = new Album();
+        AlbumDAL dal = new AlbumDAL();
+        album = dal.get(tabela.getSelectionModel().getSelectedIndex());
         Stage stage = new Stage();
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("CadAlbumMusica.fxml")));
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("CadMusicaAlbum.fxml")));
         stage.setScene(scene);
         stage.setTitle("Album Música");
         stage.setResizable(false);

@@ -157,7 +157,7 @@ public class CadGeneroController implements Initializable {
                  a.showAndWait();
             }
         } else //alteração de cadastro
-        if (dal.alterar(g)) {
+        if (!dal.alterar(g)) {
             a.setContentText("Problemas ao Alterar: "+Banco.getConexao().getMensagemErro());
              a.showAndWait();
         }
