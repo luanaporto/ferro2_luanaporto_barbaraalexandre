@@ -89,9 +89,6 @@ public class PesqAlbumController implements Initializable {
 
     @FXML
     private void clkCadAlbumMusica(ActionEvent event) throws IOException {
-        album = new Album();
-        AlbumDAL dal = new AlbumDAL();
-        album = dal.get(tabela.getSelectionModel().getSelectedIndex());
         Stage stage = new Stage();
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("CadMusicaAlbum.fxml")));
         stage.setScene(scene);
@@ -111,6 +108,9 @@ public class PesqAlbumController implements Initializable {
     private void clkTabela(MouseEvent event) {
         if (tabela.getSelectionModel().getSelectedIndex() >= 0) {
             btconfirmar.setDisable(false);
+            album = new Album();
+            AlbumDAL dal = new AlbumDAL();
+            album = dal.get(tabela.getSelectionModel().getSelectedIndex());
         }
     }
     

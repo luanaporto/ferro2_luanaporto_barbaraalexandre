@@ -122,7 +122,7 @@ public class CadMusicaAlbumController implements Initializable {
         btir.setDisable(true);
         btvoltar.setDisable(true);
         
-        carregarCombos();
+        
         
         Album a = new Album();
         if(PesqAlbumController.getAlbum() != null)
@@ -133,16 +133,21 @@ public class CadMusicaAlbumController implements Initializable {
             txano.setText("" + a.getAno());
             txdescricao.setText(a.getDescricao());
             txrating.setText("" + a.getRating());
-            cbgenero.getSelectionModel().select(0);
-            cbgenero.getSelectionModel().select(a.getGenero());
-            cbartista.getSelectionModel().select(0);
-            cbartista.getSelectionModel().select(a.getArtista());
+            
             foto.setImage(new Image(new AlbumDAL().getFoto(a.getId())));
             
             //musicas que não estão no album
             carregaTabela1("am.al_id<>"+a.getId());
             //apenas músicas do album
             carregaTabela2("am.al_id="+a.getId());
+            
+            carregarCombos();
+            
+            cbgenero.getSelectionModel().select(0);
+            cbgenero.getSelectionModel().select(a.getGenero());
+            cbartista.getSelectionModel().select(0);
+            cbartista.getSelectionModel().select(a.getArtista());
+            
         }
         else
         {
@@ -160,6 +165,7 @@ public class CadMusicaAlbumController implements Initializable {
             carregaTabela1("");
             //apenas músicas do album
             //carregaTabela2("");
+            carregarCombos();
         }
     }
     
