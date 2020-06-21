@@ -32,7 +32,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Spinner;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextInputControl;
@@ -221,7 +220,8 @@ public class CadMusicaAlbumController implements Initializable {
             a.setContentText("Problemas ao Alterar: "+Banco.getConexao().getMensagemErro());
              a.showAndWait();
         }
-       
+        AlbumMusicaDAL amdal = new AlbumMusicaDAL();
+        amdal.alterar(al.getId(), tabela1.getItems());
         pndados.getScene().getWindow().hide();
     }
     
@@ -283,38 +283,17 @@ public class CadMusicaAlbumController implements Initializable {
 
     @FXML
     private void clkBtIr(MouseEvent event) {
-        int al;
-        try {
-            al = Integer.parseInt(txid.getText());
-        } catch (Exception e) {
-            al = 0;
-        }
-        AlbumMusicaDAL dal = new AlbumMusicaDAL();
-        dal.salvar(al, tabela1.getSelectionModel().getSelectedItem());
-        
-        //musicas que não estão no album
-        carregaTabela1("am.al_id<>"+al);
-        //apenas músicas do album
-        carregaTabela2("am.al_id="+al);
+        tabela2.getItems().add(tabela1.getSelectionModel().getSelectedItem());
+        tabela1.getItems().remove(tabela1.getSelectionModel().getSelectedItem());
         
         btir.setDisable(true);
     }
 
     @FXML
     private void clkBtVoltar(MouseEvent event) {
-        int al;
-        try {
-            al = Integer.parseInt(txid.getText());
-        } catch (Exception e) {
-            al = 0;
-        }
-        AlbumMusicaDAL dal = new AlbumMusicaDAL();
-        dal.apagar(al, tabela2.getSelectionModel().getSelectedItem());
         
-        //musicas que não estão no album
-        carregaTabela1("am.al_id<>"+al);
-        //apenas músicas do album
-        carregaTabela2("am.al_id="+al);
+        tabela1.getItems().add(tabela2.getSelectionModel().getSelectedItem());
+        tabela2.getItems().remove(tabela2.getSelectionModel().getSelectedItem());
         
         btvoltar.setDisable(true);
     }
