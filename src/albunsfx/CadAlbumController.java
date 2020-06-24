@@ -244,7 +244,7 @@ public class CadAlbumController implements Initializable {
 
     @FXML
     private void clkBtBuscar(ActionEvent event) {
-        carregaTabela("upper(al_titulo) like '%"+txbusca.getText().toUpperCase()+"%'");
+        carregaTabela("upper(al_titulo) like '%"+txbusca.getText().toUpperCase()+"%' or upper(art.art_nome) like '%"+txbusca.getText().toUpperCase()+"%'");
     }
 
     @FXML

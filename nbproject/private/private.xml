@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/f2/ferro2_luanaporto_barbaraalexandre/src/albunsfx/PesqAlbum.fxml</file>
-            <file>file:/E:/f2/ferro2_luanaporto_barbaraalexandre/src/albunsfx/CadAlbum.fxml</file>
+            <file>file:/E:/f2/ferro2_luanaporto_barbaraalexandre/src/albunsfx/db/dal/ArtistaDAL.java</file>
+            <file>file:/E:/f2/ferro2_luanaporto_barbaraalexandre/src/albunsfx/db/dal/AlbumDAL.java</file>
+            <file>file:/E:/f2/ferro2_luanaporto_barbaraalexandre/src/albunsfx/PesqAlbumController.java</file>
             <file>file:/E:/f2/ferro2_luanaporto_barbaraalexandre/src/albunsfx/CadAlbumController.java</file>
+            <file>file:/E:/f2/ferro2_luanaporto_barbaraalexandre/src/albunsfx/CadMusicaAlbumController.java</file>
+            <file>file:/E:/f2/ferro2_luanaporto_barbaraalexandre/src/albunsfx/AlbunsFX.java</file>
         </group>
     </open-files>
 </project-private>
