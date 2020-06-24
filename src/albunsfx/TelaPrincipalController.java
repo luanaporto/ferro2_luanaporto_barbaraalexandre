@@ -102,17 +102,4 @@ public class TelaPrincipalController implements Initializable {
         
         stage.showAndWait();
     }
-    
-    @FXML
-    private void clkCadAlbumMusica(ActionEvent event) throws IOException {
-         //executar a janela de cadastro
-        Stage stage = new Stage();
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("CadMusicaAlbum.fxml")));
-        stage.setScene(scene);
-        stage.setTitle("Album Música");
-        stage.setResizable(false);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        
-        stage.showAndWait();
-    }
 }

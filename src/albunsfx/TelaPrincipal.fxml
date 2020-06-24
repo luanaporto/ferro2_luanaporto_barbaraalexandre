@@ -29,23 +29,9 @@
                 </Menu>
                   <Menu mnemonicParsing="false" text="Álbum">
                     <items>
-                      <MenuItem mnemonicParsing="false" onAction="#clkCadAlbumMusica" text="Novo Álbum Original" />
-                        <MenuItem mnemonicParsing="false" onAction="#clkCadAlbumMusica" text="Novo Álbum Personalizado" />
-                        <MenuItem mnemonicParsing="false" onAction="#clkPesqAlbum" text="Abrir Álbum Original" />
-                        <MenuItem mnemonicParsing="false" onAction="#clkPesqAlbum" text="Abrir Álbum Personalizado" />
+                        <MenuItem mnemonicParsing="false" onAction="#clkPesqAlbum" text="Pesquisar Álbum" />
                     </items>
                   </Menu>
-                <Menu mnemonicParsing="false" text="Operações">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Monte seu album" />
-                    <MenuItem mnemonicParsing="false" text="Play Musics" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Ajuda">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Sobre" />
-                  </items>
-                </Menu>
               </menus>
                <VBox.margin>
                   <Insets />

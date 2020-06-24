@@ -101,6 +101,7 @@ public class PesqAlbumController implements Initializable {
 
     @FXML
     private void clkBtCancelar(ActionEvent event) {
+        album = null;
         pnpesquisa.getScene().getWindow().hide();
     }
 
